@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cheat-drill"
+version = "0.1.0"
+description = "How many known agent cheat moves do your Claude Code hooks actually stop? A drill + scorecard, and a reference guard hook."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = []
+keywords = ["claude-code", "hooks", "ai-agents", "coding-agents", "guardrails", "testing", "reward-hacking"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/thinx-pro/cheat-drill"
+
+[project.scripts]
+cheat-drill = "cheat_drill.cli:main"
+
+[tool.setuptools]
+packages = ["cheat_drill"]

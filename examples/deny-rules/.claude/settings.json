@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(/tests/**)",
+      "Edit(/scripts/compare.py)",
+      "Edit(/.github/**)",
+      "Edit(/.claude/**)",
+      "Bash(git commit --no-verify:*)",
+      "Bash(git push --no-verify:*)"
+    ]
+  }
+}
