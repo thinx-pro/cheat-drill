@@ -128,9 +128,3 @@ python3 scripts/shoot.py        # README screenshots (macOS + Chrome)
 ## License
 
 MIT
-
----
-
-### 中文说明
-
-cheat-drill 用来实测你的 Claude Code 护栏能不能拦住 Agent 「改检查而不是改代码」。它把 39 种已知的作弊动作伪造成 PreToolUse 事件，交给你真实配置的 Hook 和权限规则：`sed -i` 改测试、`--no-verify`、改 `core.hooksPath`、用当前输出覆盖 golden 文件、`HUSKY=0`、`assume-unchanged`、`base64 | sh` 等。同时用 15 个正常操作测误拦，最后给出分数。场景本身不会被执行，只有你的 Hook 会运行，而且跑在临时的夹具仓库里。实测结果：只按路径拦 Edit/Write 的常见做法，39 个动作只拦下 9 个，走 Shell 的 13 种改法全部漏过，还会误拦「新增测试文件」。附带的参考 Hook `verifier_guard.py` 在样本内拦下 36/39（另 3 个转人工），误拦 0。在事后编写、没有用于调参的 25 个留出变体上，它拦下 21 个、1 个转人工、漏 3 个，并误拦 1 个对照操作，这些都如实写在上文。一行运行：`pipx run --spec git+https://github.com/thinx-pro/cheat-drill cheat-drill`。
