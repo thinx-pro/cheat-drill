@@ -2,6 +2,9 @@
 
 **How many known agent cheat moves do your Claude Code hooks actually stop?** cheat-drill feeds 39 ways an agent can weaken its own checks to your real `PreToolUse` hooks and permission rules: `sed -i` on a test, `--no-verify`, `core.hooksPath`, overwriting a golden file, `HUSKY=0`, `assume-unchanged`, `base64 | sh`, and more. It then scores what got through. A typical "protected files" setup stops **9 of 39**.
 
+<!-- agent-preflight -->
+> **Also a Claude Code skill.** `cheat-drill` is part of [agent-preflight](https://github.com/thinx-pro/agent-preflight), 16 offline checks for coding agents: `/plugin marketplace add thinx-pro/agent-preflight` then `/plugin install cheat-drill@agent-preflight`, and ask Claude in plain words.
+
 ![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue) ![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen) ![Claude Code hooks](https://img.shields.io/badge/for-Claude%20Code%20hooks-orange) ![MIT](https://img.shields.io/badge/license-MIT-green)
 
 ![cheat-drill against a typical path-based protected-files hook](assets/drill-path-hook.png)
